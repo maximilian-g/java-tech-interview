@@ -1,4 +1,4 @@
-package com.maximilian.interview.algo.sorting;
+package com.maximilian.interview.sorting;
 
 public class InsertionSort <T extends Comparable<T>> implements SortStrategy<T> {
 

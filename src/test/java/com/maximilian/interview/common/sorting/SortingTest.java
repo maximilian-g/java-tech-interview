@@ -1,5 +1,11 @@
-package com.maximilian.interview.algo.sorting;
+package com.maximilian.interview.common.sorting;
 
+import com.maximilian.interview.sorting.BubbleSort;
+import com.maximilian.interview.sorting.InsertionSort;
+import com.maximilian.interview.sorting.MergeSort;
+import com.maximilian.interview.sorting.QuickSort;
+import com.maximilian.interview.sorting.SelectionSort;
+import com.maximilian.interview.sorting.SortStrategy;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.maximilian.interview.algo.recursion;
+package com.maximilian.interview.common.recursion;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
