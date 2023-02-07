@@ -1,5 +1,6 @@
 package com.maximilian.interview.intervals;
 
+import com.maximilian.interview.TestCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,8 +13,8 @@ class MaxStreamViewersTest {
         List<TestCase> testCases = getTestCases();
 
         for (TestCase testCase : testCases) {
-            System.out.println("Executing test case '" + testCase.testCaseDescription + "'...");
-            Assertions.assertEquals(testCase.expectedResult, MaxStreamViewers.maxViewers(testCase.data));
+            System.out.println("Executing test case '" + testCase.testCaseDescription() + "'...");
+            Assertions.assertEquals(testCase.expectedResult(), MaxStreamViewers.maxViewers(testCase.data()));
         }
 
     }
@@ -28,10 +29,6 @@ class MaxStreamViewersTest {
                 new TestCase(new int[][]{{0, 10}, {5, 15}, {7, 10}},  3, "3 viewers max, 3 intersecting intervals"),
                 new TestCase(new int[][]{{10, 30}, {20, 40}, {39, 50}, {60, 110}, {80, 90}, {30, 70}, {10, 120}},  4, "4 viewers max, 7 intervals")
         );
-    }
-
-    private record TestCase(int[][] data, int expectedResult, String testCaseDescription) {
-
     }
 
 }
