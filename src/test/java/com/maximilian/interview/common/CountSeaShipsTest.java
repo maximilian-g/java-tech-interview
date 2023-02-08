@@ -1,13 +1,10 @@
 package com.maximilian.interview.common;
 
 import com.maximilian.interview.TestCase;
-import com.maximilian.interview.intervals.MaxStreamViewers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CountSeaShipsTest {
 
