@@ -3,6 +3,8 @@ package com.maximilian.interview.tree;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 class BinarySearchTreeTest {
 
     @Test
@@ -33,6 +35,20 @@ class BinarySearchTreeTest {
 
         // dfs traversal
         test.print();
+    }
+
+    @Test
+    void invertTest() {
+        BinarySearchTree<Integer> test = new BinarySearchTree<>();
+        test.insert(4);
+        test.insert(2);
+        test.insert(7);
+        test.insert(1);
+        test.insert(3);
+        test.insert(6);
+        test.insert(9);
+        test.invert();
+        Assertions.assertIterableEquals(List.of(4, 7, 9, 6, 2, 3, 1), test.getValuesAsList());
     }
 
 }

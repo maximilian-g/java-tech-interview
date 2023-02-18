@@ -87,6 +87,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
         printInternal(root);
     }
 
+    public List<T> getValuesAsList() {
+        List<T> values = new LinkedList<>();
+        fillList(root, values);
+        return values;
+    }
+
+    // binary tree is not usable after invert
+    public void invert() {
+        invertInternal(root);
+    }
+
     // dfs
     private void printInternal(TreeNode<T> node) {
         if (node == null) {
@@ -95,6 +106,25 @@ public class BinarySearchTree<T extends Comparable<T>> {
         printInternal(node.left);
         System.out.println(node.val);
         printInternal(node.right);
+    }
+
+    private void fillList(TreeNode<T> node, List<T> result) {
+        if (node == null) {
+            return;
+        }
+        result.add(node.val);
+        fillList(node.left, result);
+        fillList(node.right, result);
+    }
+
+    private TreeNode<T> invertInternal(TreeNode<T> root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode<T> tmp = invertInternal(root.right);
+        root.right = invertInternal(root.left);
+        root.left = tmp;
+        return root;
     }
 
 }
