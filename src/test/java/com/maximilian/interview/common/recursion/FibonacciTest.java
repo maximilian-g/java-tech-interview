@@ -22,7 +22,7 @@ class FibonacciTest {
         Assertions.assertEquals(89, Fibonacci.fibonacciRecursive(index++));
         Assertions.assertEquals(144, Fibonacci.fibonacciRecursive(index));
 
-        // large number, 8 796 093 022 208 operations in recursive method
+        // large number, 8 796 093 022 208 operations in recursive method
         index = 43;
         Assertions.assertEquals(433494437, Fibonacci.fibonacciRecursive(index));
     }
