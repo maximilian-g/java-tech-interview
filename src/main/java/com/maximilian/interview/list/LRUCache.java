@@ -1,4 +1,4 @@
-package com.maximilian.interview.common;
+package com.maximilian.interview.list;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +18,7 @@ import java.util.Map;
 public class LRUCache {
 
     /*
-     * This implementation assumes that "recently used"
+     * This implementation assumes that "least recently used"
      * item is item that has least "accessCount"
      */
 

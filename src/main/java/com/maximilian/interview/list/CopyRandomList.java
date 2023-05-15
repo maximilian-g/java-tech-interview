@@ -1,4 +1,4 @@
-package com.maximilian.interview.common;
+package com.maximilian.interview.list;
 
 
 import java.util.ArrayList;

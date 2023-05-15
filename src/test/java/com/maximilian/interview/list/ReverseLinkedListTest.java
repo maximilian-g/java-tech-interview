@@ -1,5 +1,6 @@
-package com.maximilian.interview.common;
+package com.maximilian.interview.list;
 
+import com.maximilian.interview.list.ReverseLinkedList;
 import com.maximilian.interview.stack.Node;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

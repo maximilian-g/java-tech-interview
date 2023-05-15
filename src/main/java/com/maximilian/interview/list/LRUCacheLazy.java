@@ -1,4 +1,4 @@
-package com.maximilian.interview.common;
+package com.maximilian.interview.list;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ public class LRUCacheLazy {
 
     /*
      * Very lazy implementation,
-     * assuming that "recently used" - most "elder" item
+     * assuming that "least recently used" - most "old" item
      */
 
     private final LinkedHashMap<Integer, Integer> map;
