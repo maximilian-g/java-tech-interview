@@ -1,5 +1,6 @@
 package com.maximilian.interview.list;
 
+import com.maximilian.interview.list.util.ListUtils;
 import com.maximilian.interview.stack.Node;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -16,7 +17,7 @@ class MergeListsTest {
                 l1, l2, l3
         };
 
-        Node<Integer> expectedResult = makeNodeFrom(new Integer[]{1, 1, 2, 3, 4, 4, 5, 6});
+        Node<Integer> expectedResult = ListUtils.makeListFrom(new Integer[]{1, 1, 2, 3, 4, 4, 5, 6});
 
         Node<Integer> head = MergeLists.mergeKLists(arr);
         while (head != null) {
@@ -27,21 +28,6 @@ class MergeListsTest {
 
         Assertions.assertNull(MergeLists.mergeKLists(new Node[0]));
 
-    }
-
-    private <T> Node<T> makeNodeFrom(T[] arr) {
-        Node<T> head = null;
-        Node<T> temp = null;
-        for (T val : arr) {
-            if (head == null) {
-                head = new Node<>(val);
-                temp = head;
-            } else {
-                temp.next = new Node<>(val);
-                temp = temp.next;
-            }
-        }
-        return head;
     }
 
 }
