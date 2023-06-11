@@ -117,6 +117,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         fillList(node.right, result);
     }
 
+    // Invert binary tree
     private TreeNode<T> invertInternal(TreeNode<T> root) {
         if (root == null) {
             return null;
