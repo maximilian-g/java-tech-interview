@@ -1,4 +1,4 @@
-package com.maximilian.interview.array;
+package com.maximilian.interview.common.backtrack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +22,15 @@ public class Permutations {
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
         if (tempList.size() == nums.length) {
             list.add(new ArrayList<>(tempList));
-        } else {
-            for (int num : nums) {
-                if (tempList.contains(num)) continue; // element already exists, skip
-                tempList.add(num);
-                backtrack(list, tempList, nums);
-                tempList.remove(tempList.size() - 1);
+        }
+        for (int num : nums) {
+            // element already exists, skip
+            if (tempList.contains(num)) {
+                continue;
             }
+            tempList.add(num);
+            backtrack(list, tempList, nums);
+            tempList.remove(tempList.size() - 1);
         }
     }
 
