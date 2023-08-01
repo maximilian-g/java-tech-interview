@@ -1,5 +1,8 @@
 package com.maximilian.interview.common.dp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * You are climbing a staircase. It takes n steps to reach the top.
  * <p>
@@ -24,6 +27,59 @@ public class ClimbingStairs {
             a[i] = a[i - 1] + a[i - 2];
         }
         return a[n - 1];
+    }
+
+    public static int climbStairsBruteForce(int n) {
+        if (n < 2) {
+            return n;
+        }
+        return climbStairsBruteForce(0, n);
+    }
+
+    public static int climbStairsBruteForceWithCache(int n) {
+        if (n < 2) {
+            return n;
+        }
+        return climbStairsBruteForceWithCache(0, n, new HashMap<>());
+    }
+
+    private static int climbStairsBruteForceWithCache(int currentStep,
+                                                      int target,
+                                                      Map<Integer, Integer> distinctWaysFromStep) {
+        if (currentStep > target) {
+            // overstep
+            return 0;
+        }
+        if (currentStep == target) {
+            // found solution
+            return 1;
+        }
+        int currentStepPlusOne = currentStep + 1;
+        int currentStepPlusTwo = currentStep + 2;
+        // filling cache for 2 possible subtrees
+        if (!distinctWaysFromStep.containsKey(currentStepPlusOne)) {
+            distinctWaysFromStep.put(currentStepPlusOne,
+                    climbStairsBruteForceWithCache(currentStepPlusOne, target, distinctWaysFromStep));
+        }
+        if (!distinctWaysFromStep.containsKey(currentStepPlusTwo)) {
+            distinctWaysFromStep.put(currentStepPlusTwo,
+                    climbStairsBruteForceWithCache(currentStepPlusTwo, target, distinctWaysFromStep));
+        }
+        return distinctWaysFromStep.get(currentStepPlusOne) +
+                distinctWaysFromStep.get(currentStepPlusTwo);
+    }
+
+    private static int climbStairsBruteForce(int currentStep, int target) {
+        if (currentStep > target) {
+            // overstep
+            return 0;
+        }
+        if (currentStep == target) {
+            // found solution
+            return 1;
+        }
+        return climbStairsBruteForce(currentStep + 1, target) +
+                climbStairsBruteForce(currentStep + 2, target);
     }
 
 }
