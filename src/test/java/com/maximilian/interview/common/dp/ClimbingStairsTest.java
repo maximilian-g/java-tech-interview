@@ -8,9 +8,17 @@ class ClimbingStairsTest {
     @Test
     void climbStairs() {
 
-        Assertions.assertEquals(3, ClimbingStairs.climbStairs(3));
-        Assertions.assertEquals(2, ClimbingStairs.climbStairs(2));
-        Assertions.assertEquals(8, ClimbingStairs.climbStairs(5));
+        Assertions.assertEquals(3, ClimbingStairs.climbStairsBottomDown(3));
+        Assertions.assertEquals(2, ClimbingStairs.climbStairsBottomDown(2));
+        Assertions.assertEquals(8, ClimbingStairs.climbStairsBottomDown(5));
+    }
+
+    @Test
+    void climbStairsBottomDown() {
+
+        Assertions.assertEquals(3, ClimbingStairs.climbStairsBottomUp(3));
+        Assertions.assertEquals(2, ClimbingStairs.climbStairsBottomUp(2));
+        Assertions.assertEquals(8, ClimbingStairs.climbStairsBottomUp(5));
     }
 
     @Test

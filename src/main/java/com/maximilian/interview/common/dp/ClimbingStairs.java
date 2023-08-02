@@ -14,7 +14,8 @@ import java.util.Map;
  */
 public class ClimbingStairs {
 
-    public static int climbStairs(int n) {
+    // bottom-down dp solution, starting from start, ending at end
+    public static int climbStairsBottomDown(int n) {
         if (n < 2) {
             return n;
         }
@@ -29,6 +30,23 @@ public class ClimbingStairs {
         return a[n - 1];
     }
 
+    // bottom-up dp solution, starting from end, ending at start
+    public static int climbStairsBottomUp(int n) {
+        if (n < 2) {
+            return n;
+        }
+
+        int[] a = new int[n];
+        a[n - 1] = 1;
+        a[n - 2] = 1;
+
+        for (int i = n - 3; i >= 0; i--) {
+            a[i] = a[i + 1] + a[i + 2];
+        }
+        return a[0] + a[1];
+    }
+
+    // brute force solution
     public static int climbStairsBruteForce(int n) {
         if (n < 2) {
             return n;
@@ -36,6 +54,7 @@ public class ClimbingStairs {
         return climbStairsBruteForce(0, n);
     }
 
+    // brute force with cache
     public static int climbStairsBruteForceWithCache(int n) {
         if (n < 2) {
             return n;
