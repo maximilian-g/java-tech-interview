@@ -23,19 +23,14 @@ public class MergeIntervals {
         Arrays.sort(intervals, Comparator.comparingInt(l -> l[0]));
         List<int[]> result = new ArrayList<>(intervals.length);
         for (int i = 0, j = 1; i < intervals.length && j <= intervals.length; j++) {
-            if (j < intervals.length && IntervalUtils.intersects(intervals[i], intervals[j])) {
-                intervals[i][0] = Math.min(intervals[i][0], intervals[j][0]);
+            if (j < intervals.length && intervals[i][1] >= intervals[j][0]) {
                 intervals[i][1] = Math.max(intervals[i][1], intervals[j][1]);
             } else {
                 result.add(intervals[i]);
                 i = j;
             }
         }
-        int[][] res = new int[result.size()][];
-        for (int i = 0; i < result.size(); i++) {
-            res[i] = result.get(i);
-        }
-        return res;
+        return result.toArray(new int[result.size()][]);
     }
 
 }
