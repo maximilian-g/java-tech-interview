@@ -70,7 +70,7 @@ public class FirstMissingPositive {
                     result = num;
                     resultChanged = true;
                 } else {
-                    if (!resultChanged) {
+                    if (!resultChanged && !wasOneUsed) {
                         return result;
                     }
                     break;
