@@ -37,7 +37,9 @@ public class FindTheTownJudge {
             countTrusts[trustValue[1]]++;
         }
         for (int i = 1; i < n + 1; i++) {
-            if (countTrusts[i] == n - 1) return i;
+            if (countTrusts[i] == n - 1) {
+                return i;
+            }
         }
         return -1;
     }
