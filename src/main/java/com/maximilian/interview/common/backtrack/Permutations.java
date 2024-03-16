@@ -28,6 +28,7 @@ public class Permutations {
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
         if (tempList.size() == nums.length) {
             list.add(new ArrayList<>(tempList));
+            return;
         }
         for (int num : nums) {
             // element already exists, skip
