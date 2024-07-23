@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/">
- * Link to a problem</a>
+ * Link to a task</a>
  * <p>
  * Given a string containing digits from 2-9 inclusive, return all
  * possible letter combinations that the number could represent.

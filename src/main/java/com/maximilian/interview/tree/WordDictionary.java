@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * <a href="https://neetcode.io/problems/design-word-search-data-structure">Link to a task</a>
  * Design a data structure that supports adding new words and searching for existing words.
  * <p>
  * Implement the WordDictionary class:
@@ -18,7 +19,6 @@ import java.util.Map;
  * 1 <= word.length <= 20
  * word in addWord consists of lowercase English letters.
  * word in search consist of '.' or lowercase English letters.
- * <a href="https://neetcode.io/problems/design-word-search-data-structure">Link to a task</a>
  */
 public class WordDictionary {
 

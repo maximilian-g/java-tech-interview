@@ -1,6 +1,12 @@
 package com.maximilian.interview.intervals;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.maximilian.interview.intervals.IntervalUtils.fullyIntersects;
+import static com.maximilian.interview.intervals.IntervalUtils.intersects;
+
 /**
  * You are given an array of non-overlapping intervals intervals where intervals[i] = [starti, endi]
  * represent the start and the end of the ith interval and intervals is sorted in ascending order by starti.
@@ -90,6 +96,31 @@ public class InsertInterval {
         return resultIntervals;
     }
 
+    public static int[][] insertOpt(int[][] intervals, int[] newInterval) {
+        List<int[]> res = new ArrayList<>();
+        for (int[] interval : intervals) {
+            if (newInterval == null || interval[1] < newInterval[0]) {
+                // case when "newInterval" does not intersect "interval", just inserting
+                res.add(interval);
+            } else if (interval[0] > newInterval[1]) {
+                // case when "newInterval" does not intersect "interval",
+                // AND we found place for "newInterval" (before "interval")
+                res.add(newInterval);
+                res.add(interval);
+                newInterval = null;
+            } else {
+                // case when intervals intersect, merging them
+                newInterval[0] = Math.min(interval[0], newInterval[0]);
+                newInterval[1] = Math.max(interval[1], newInterval[1]);
+            }
+        }
+        // case when interval is on the last place
+        if (newInterval != null) {
+            res.add(newInterval);
+        }
+        return res.toArray(new int[0][]);
+    }
+
     private static int[][] insert(int[][] intervals, int[] newInterval, int insertionIndex) {
         int[][] result = new int[intervals.length + 1][];
         for (int i = 0, j = 0; i < result.length; i++) {
@@ -100,18 +131,6 @@ public class InsertInterval {
             }
         }
         return result;
-    }
-
-    private static boolean fullyIntersects(int[] intervalA, int[] intervalB) {
-        return intervalA[0] <= intervalB[0] && intervalA[1] >= intervalB[0] &&
-                intervalA[0] <= intervalB[1] && intervalA[1] >= intervalB[1];
-    }
-
-    private static boolean intersects(int[] intervalA, int[] intervalB) {
-        return (intervalA[0] <= intervalB[0] && intervalA[1] >= intervalB[0] ||
-                intervalA[0] <= intervalB[1] && intervalA[1] >= intervalB[1]) ||
-                (intervalB[0] <= intervalA[0] && intervalB[1] >= intervalA[0] ||
-                        intervalB[0] <= intervalA[1] && intervalB[1] >= intervalA[1]);
     }
 
 }

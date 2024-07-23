@@ -25,9 +25,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < initialData.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }
@@ -53,9 +59,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < initialData.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }
@@ -80,9 +92,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < initialData.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }
@@ -106,9 +124,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < expected.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
         initialData = new int[][]{
@@ -128,9 +152,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < expected.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }
@@ -157,9 +187,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < expected.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }
@@ -180,9 +216,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < expected.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }
@@ -202,9 +244,15 @@ class InsertIntervalTest {
                 initialData,
                 inputInterval
         );
-        Assertions.assertEquals(result.length, expected.length);
+        int[][] resultOpt = InsertInterval.insertOpt(
+                initialData,
+                inputInterval
+        );
+        Assertions.assertEquals(expected.length, result.length);
+        Assertions.assertEquals(expected.length, resultOpt.length);
         for (int i = 0; i < expected.length; i++) {
             Assertions.assertArrayEquals(expected[i], result[i]);
+            Assertions.assertArrayEquals(expected[i], resultOpt[i]);
         }
 
     }

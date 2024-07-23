@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
+ * <a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/">Link to a task</a>
  * Given the root of a binary tree, return the bottom-up level order
  * traversal of its nodes' values. (i.e., from left to right, level by level from leaf to root).
  * <p>
@@ -15,7 +16,6 @@ import java.util.TreeMap;
  * <p>
  * The number of nodes in the tree is in the range [0, 2000].
  * -1000 <= Node.val <= 1000
- * <a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/description/">Link to task</a>
  */
 public class LevelOrderTraversalReversed {
 
@@ -29,7 +29,7 @@ public class LevelOrderTraversalReversed {
     }
 
     private static void traverseByLevel(Map<Integer, List<Integer>> levelMap,
-                                 TreeNode<Integer> root) {
+                                        TreeNode<Integer> root) {
         if (root == null) {
             return;
         }

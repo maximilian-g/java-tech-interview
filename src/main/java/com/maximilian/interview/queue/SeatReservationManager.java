@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * Design a system that manages the reservation state of n seats that are numbered from 1 to n.
  * <a href="https://leetcode.com/problems/seat-reservation-manager/description/">
- * Link to a leetcode problem</a>
+ * Link to a task</a>
  * <p>
  * Implement the SeatManager class:
  * <p>

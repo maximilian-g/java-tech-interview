@@ -5,13 +5,13 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
+ * <a href="https://leetcode.com/problems/sort-the-people">Link to a task</a>
  * You are given an array of strings names, and an array heights that consists of
  * distinct positive integers. Both arrays are of length n.
  * <p>
  * For each index i, names[i] and heights[i] denote the name and height of the ith person.
  * <p>
  * Return names sorted in descending order by the people's heights.
- * <a href="https://leetcode.com/problems/sort-the-people">Link to a task</a>
  */
 public class SortPeople {
 

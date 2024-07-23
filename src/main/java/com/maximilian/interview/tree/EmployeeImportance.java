@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * <a href="https://leetcode.com/problems/employee-importance/description/">Link to a task</a>
  * You have a data structure of employee information, including the employee's unique ID,
  * importance value, and direct subordinates' IDs.
  * <p>
@@ -25,7 +26,6 @@ import java.util.Map;
  * -100 <= employees[i].importance <= 100
  * One employee has at most one direct leader and may have several subordinates.
  * The IDs in employees[i].subordinates are valid IDs.
- * <a href="https://leetcode.com/problems/employee-importance/description/">Link to task</a>
  */
 public class EmployeeImportance {
 
