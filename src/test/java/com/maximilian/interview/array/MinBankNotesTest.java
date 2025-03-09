@@ -18,6 +18,10 @@ class MinBankNotesTest {
         targetAmount = 471;
         Assertions.assertEquals(-1, MinBankNotes.minBankNotes(bankNotes, targetAmount));
 
+        bankNotes = new int[]{20, 30, 60};
+        targetAmount = 100;
+        Assertions.assertEquals(3, MinBankNotes.minBankNotes(bankNotes, targetAmount));
+
     }
 
 }

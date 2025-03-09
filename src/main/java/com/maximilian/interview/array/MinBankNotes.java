@@ -15,17 +15,27 @@ public class MinBankNotes {
 
     public static int minBankNotes(int[] bankNotes, int targetAmount) {
         Arrays.sort(bankNotes);
-        int usedBankNotes = 0;
-        for (int i = bankNotes.length - 1; i >= 0; i--) {
-            if (targetAmount >= bankNotes[i]) {
-                usedBankNotes += targetAmount / bankNotes[i];
-                targetAmount %= bankNotes[i];
-            }
+        return minBankNotesInternal(bankNotes, bankNotes.length - 1, targetAmount, 0);
+    }
+
+    private static int minBankNotesInternal(int[] bankNotes, int startBackwards, int targetAmount, int count) {
+        if (targetAmount == 0) {
+            return count;
         }
-        if (targetAmount > 0) {
+        if (startBackwards < 0) {
             return -1;
         }
-        return usedBankNotes;
+        int res = Integer.MAX_VALUE;
+        for (; startBackwards >= 0; startBackwards--) {
+            if (targetAmount >= bankNotes[startBackwards]) {
+                int backtrackResult = minBankNotesInternal(bankNotes, startBackwards - 1,
+                        targetAmount % bankNotes[startBackwards], targetAmount / bankNotes[startBackwards]);
+                if (backtrackResult != -1) {
+                    res = Math.min(backtrackResult + count, res);
+                }
+            }
+        }
+        return res != Integer.MAX_VALUE ? res : -1;
     }
 
 }
